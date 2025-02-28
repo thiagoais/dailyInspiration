@@ -1,6 +1,14 @@
 import React from "react";
 import { Button } from "./ui/button";
-import { Twitter, Facebook, Linkedin /*, PinterestIcon*/ } from "lucide-react";
+
+import {
+  FaTwitter,
+  FaFacebook,
+  FaLinkedin,
+  FaWhatsapp,
+  FaTelegram,
+  FaPinterest,
+} from "react-icons/fa";
 import {
   Tooltip,
   TooltipContent,
@@ -25,7 +33,9 @@ const SocialShare = ({
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodedQuote}`;
   const facebookUrl = `https://www.facebook.com/sharer/sharer.php?quote=${encodedQuote}`;
   const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=https://inspirationalquotes.fun/&summary=${encodedQuote}`;
-  //const pinterestUrl = `https://pinterest.com/pin/create/button/?url=https://inspirationalquotes.fun/&description=${encodedQuote}`;
+  const whatsappUrl = `https://wa.me/?text=${encodedQuote}`;
+  const telegramUrl = `https://t.me/share/url?url=https://inspirationalquotes.fun/&text=${encodedQuote}`;
+  const pinterestUrl = `https://pinterest.com/pin/create/button/?url=https://inspirationalquotes.fun/&description=${encodedQuote}`;
 
   return (
     <div className="flex items-center gap-2 bg-white p-2 rounded-lg">
@@ -38,7 +48,7 @@ const SocialShare = ({
               onClick={() => window.open(twitterUrl, "_blank")}
               className="hover:text-blue-400"
             >
-              <Twitter className="h-5 w-5" />
+              <FaTwitter className="h-5 w-5" />
             </Button>
           </TooltipTrigger>
           <TooltipContent>
@@ -54,7 +64,7 @@ const SocialShare = ({
               onClick={() => window.open(facebookUrl, "_blank")}
               className="hover:text-blue-600"
             >
-              <Facebook className="h-5 w-5" />
+              <FaFacebook className="h-5 w-5" />
             </Button>
           </TooltipTrigger>
           <TooltipContent>
@@ -70,34 +80,64 @@ const SocialShare = ({
               onClick={() => window.open(linkedinUrl, "_blank")}
               className="hover:text-blue-700"
             >
-              <Linkedin className="h-5 w-5" />
+              <FaLinkedin className="h-5 w-5" />
             </Button>
           </TooltipTrigger>
           <TooltipContent>
             <p>Share on LinkedIn</p>
           </TooltipContent>
         </Tooltip>
+
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => window.open(whatsappUrl, "_blank")}
+              className="hover:text-blue-700"
+            >
+              <FaWhatsapp className="h-5 w-5" />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Share on WhatsApp</p>
+          </TooltipContent>
+        </Tooltip>
+
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => window.open(telegramUrl, "_blank")}
+              className="hover:text-blue-700"
+            >
+              <FaTelegram className="h-5 w-5" />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Share on Telegram</p>
+          </TooltipContent>
+        </Tooltip>
+
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => window.open(pinterestUrl, "_blank")}
+              className="hover:text-blue-700"
+            >
+              <FaPinterest className="h-5 w-5" />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Share on WhatsApp</p>
+          </TooltipContent>
+        </Tooltip>
       </TooltipProvider>
     </div>
   );
 };
-
-/* Tooltip for Pinterest
-<Tooltip>
-  <TooltipTrigger asChild>
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={() => window.open(pinterestUrl, "_blank")}
-      className="hover:text-red-600"
-    >
-      <PinterestIcon className="h-5 w-5" />
-    </Button>
-  </TooltipTrigger>
-  <TooltipContent>
-    <p>Share on Pinterest</p>
-  </TooltipContent>
-</Tooltip>
-*/
 
 export default SocialShare;
