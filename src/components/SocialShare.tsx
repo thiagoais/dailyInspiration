@@ -19,13 +19,13 @@ const SocialShare = ({
 }: SocialShareProps) => {
   // Create a beautifully formatted share text
   const formattedQuote = `"${quote}" - ${author}`;
-  const shareText = `${formattedQuote}\n\nGet daily inspiration at dailyInspire.fun`;
+  const shareText = `${formattedQuote}\n\nGet daily inspiration at https://inspirationalquotes.fun/`;
 
   const encodedQuote = encodeURIComponent(shareText);
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodedQuote}`;
   const facebookUrl = `https://www.facebook.com/sharer/sharer.php?quote=${encodedQuote}`;
-  const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=https://dailyInspire.fun&summary=${encodedQuote}`;
-  //const pinterestUrl = `https://pinterest.com/pin/create/button/?url=https://dailyInspire.fun&description=${encodedQuote}`;
+  const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=https://inspirationalquotes.fun/&summary=${encodedQuote}`;
+  //const pinterestUrl = `https://pinterest.com/pin/create/button/?url=https://inspirationalquotes.fun/&description=${encodedQuote}`;
 
   return (
     <div className="flex items-center gap-2 bg-white p-2 rounded-lg">
