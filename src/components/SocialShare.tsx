@@ -33,7 +33,7 @@ const SocialShare = ({
         <Tooltip>
           <TooltipTrigger asChild>
             <Button
-              variant="ghost"
+              variant="outline"
               size="icon"
               onClick={() => window.open(twitterUrl, "_blank")}
               className="hover:text-blue-400"
@@ -49,7 +49,7 @@ const SocialShare = ({
         <Tooltip>
           <TooltipTrigger asChild>
             <Button
-              variant="ghost"
+              variant="outline"
               size="icon"
               onClick={() => window.open(facebookUrl, "_blank")}
               className="hover:text-blue-600"
@@ -65,7 +65,7 @@ const SocialShare = ({
         <Tooltip>
           <TooltipTrigger asChild>
             <Button
-              variant="ghost"
+              variant="outline"
               size="icon"
               onClick={() => window.open(linkedinUrl, "_blank")}
               className="hover:text-blue-700"
