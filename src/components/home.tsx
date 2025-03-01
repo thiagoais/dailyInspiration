@@ -4,6 +4,7 @@ import QuoteDisplay from "./QuoteDisplay";
 import SubscriptionForm from "./SubscriptionForm";
 import SocialShare from "./SocialShare";
 import StatusMessage from "./StatusMessage";
+import SEOContent from "./SEOContent";
 import {
   getRandomQuote,
   subscribeEmail,
@@ -120,6 +121,9 @@ const Home = () => {
           )}
           <SubscriptionForm onSubmit={handleSubscribe} isLoading={isLoading} />
         </section>
+
+        {/* Add SEO Content Section at the Bottom */}
+        <SEOContent />
       </motion.main>
     </div>
   );
