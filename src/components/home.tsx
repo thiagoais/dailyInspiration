@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import QuoteDisplay from "./QuoteDisplay";
 import SubscriptionForm from "./SubscriptionForm";
@@ -122,8 +122,10 @@ const Home = () => {
           <SubscriptionForm onSubmit={handleSubscribe} isLoading={isLoading} />
         </section>
 
-        {/* Add SEO Content Section at the Bottom */}
-        <SEOContent />
+        {/* Lazy Load SEO Content for Performance */}
+        <Suspense fallback={<p>Loading content...</p>}>
+          <SEOContent />
+        </Suspense>
       </motion.main>
     </div>
   );
